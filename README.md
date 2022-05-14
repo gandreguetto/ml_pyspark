@@ -59,6 +59,31 @@ Alguns lotes das rações para cachorro de uma empresa têm estragado precocemen
 
 A base de dados da empresa contém informações sobre as quantidades dos conservantes utilizados em cada lote e indica se o lote estragou ou não. 
 
-O objetivo dessa análise é utilizar técnicas de Machine Learning para prever os lotes que irão estragar e pelo resultado da modelagem identificar o conservante que está relacionado com o apodrecimento dos lotes.
+O objetivo dessa análise (realizada no notebook "random_forest_pyspark.ipynb") é utilizar técnicas de Machine Learning para prever os lotes que irão estragar e pelo resultado da modelagem identificar o conservante que está relacionado com o apodrecimento dos lotes.
 
 O algorítmo Random Forest foi utilizado na classificação e o principal componente na determinação do apodrecimento da ração foi o conservante C.
+
+## Clusterização - Identificação dos hackers do sistema de uma empresa
+
+Uma empresa sofreu ataques hacker em seu sistema e procura identificar os hackers envolvidos. Ela já verificou que pelo menos 2 indivíduos participaram dos ataques e agora está investigando a participação de um terceiro. 
+
+O objetivo desse projeto e investigar se 2 ou 3 hackers foram os responsáveis pelos ataques. A empresa possuí dados de cada sessão de hackeamento. As informações são as seguintes:
+
+ - Tempo de conexão em minutos
+ - Quantidade de dados transferidos durante a sessão 
+ - Uso do Kali Linux (Sim ou Não)
+ - Número de servidores corrompidos
+ - Número de páginas acessadas ilegalmente
+ - Localidade do ataque 
+ - Velocidade de digitação.
+    
+Essa investigação pode ser realizada utilizando algorítmos de clusterização. 
+
+Uma outra informação crucial na resolução dessa investigação é que os hackers dividem o número de ataques de forma igual entre os participantes. Dessa forma se ocorreram 100 ataques e 2 indivíduos foram envolvidos deve-se ter 50 ataques de cada. Por outro lado, se 3 pessoas participaram cada indivíduo efetuou aproximadamente 33 ataques. 
+
+Esse problema é solucionado utilizando-se o método K-means de clusterização no pyspark. 
+
+Quando os ataques são dividos em 3 clusters o número de ataques associados a cada cluster é muito desigual.
+
+Com 2 clusters um mesmo número de ataques é associado para cada. Dessa forma é bastante provável que apenas 2 hackers participaram dos ataques.
+
